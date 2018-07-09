@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+$clactive:#4ad1cc;
+$clnor:#171717;
+
+.navbar {
+	&.menu {
+		.navbar-nav {
+			.nav-item{
+				a {
+				color: $clnor;
+				}
+			}
+		}
+	}
+}
