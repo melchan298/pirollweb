@@ -2,15 +2,479 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 $clactive:#4ad1cc;
 $clnor:#171717;
+$clp:#787878;
+$clxanh:#21bfb9;
+$clxanhduong:#0ba2db;
+$cltrang:#FFF;
+$lightdark:#f5f5f5;
+$theme-secondary:  #7b4397;
+$theme-tertiary:   #dc2430;
+$cldark:#555555;
+@mixin transition-all() {
+	-webkit-transition: all .35s;
+    -moz-transition: all .35s;
+	transition: all 0.3s;
+}
+#mainNav {
+    border-color: fade-out($clnor, 0.95);
+    background-color: white;
+    @include transition-all;
+    .navbar-brand {
+        color: $clactive;
+        &:hover,
+        &:focus {
+            color: darken($clactive, 10%);
+        } 
+    }
+    .navbar-toggler {
+        font-size: 12px;
+        padding: 8px 10px;
+        color: $clnor;
+    }
+    .navbar-nav {
+        > li {
+            > a {
+                font-size: 11px;
+                font-family: Montserrat,Medium;
+				text-transform: uppercase;
+				font-weight: bold;
+				font-size: 13px;
 
-.navbar {
-	&.menu {
-		.navbar-nav {
-			.nav-item{
-				a {
-				color: $clnor;
-				}
+                &.active {
+                    color: $clactive !important;
+                    background-color: transparent;
+                    &:hover {
+                        background-color: transparent;
+                    }
+                }
+            }
+            > a,
+            > a:focus {
+                color: $clnor;
+                &:hover {
+                    color: $clactive;
+                }
+            }
+        }
+    }
+    @media (min-width: 992px) {
+        border-color: transparent;
+        background-color: transparent;
+        .navbar-brand {
+            color:$clnor;
+            &:hover,
+            &:focus {
+                color:$clnor;
+            }
+        }
+        .navbar-nav > li > a,
+        .navbar-nav > li > a:focus {
+            color:$clnor;
+            &:hover {
+                color: $clactive;
+            }
+        }
+        &.light-menu {
+            border-color: fade-out($clnor, .9);
+            background-color: white;
+            .navbar-brand {
+                color: $clnor;
+                &:hover,
+                &:focus {
+                    color: $clactive;
+                }
+            }
+            .navbar-nav > li > a,
+            .navbar-nav > li > a:focus {
+                color: $clnor;
+                &:hover {
+                    color: $clactive;
+                }
+            }
+        }
+    }
+}
+.intro {
+	display: table;
+	width: 100%;
+	padding: 0;
+	background: url(../images/banner.jpg) no-repeat center center;
+	background-color: #e5e5e5;
+	background-size: cover;
+	font-family:Montserrat;
+	.overlay {
+	background: rgba(255,255,255,0.2);
+	}
+	h1 {
+	color:$clnor;
+	font-size: 34px;
+	font-weight: 600;
+	margin-top: 0;
+	margin-bottom: 10px;
+	font-weight:bold;
+	}
+	p {
+	color:$clp;
+	font-size: 12px;
+	margin-top: 27px;
+	margin-bottom: 40px;
+	line-height: 1.7;
+	}
+	.intro-text {
+	padding-top: 300px;
+	padding-bottom: 200px;
+	padding-left: 600px;
+	}
+}
+@media screen and (max-width: 800px) {
+ .intro{
+ 	.intro-text {
+ 		padding-left: 0;
+ 	}
+ }
+}
+.btn-custom {
+	text-transform: uppercase;
+	color: #fff;
+	background-color: $clxanh;
+	border: 0;
+	padding: 14px 30px;
+	margin: 0;
+	font-size: 12px;
+	border-radius: 2px;
+	@include transition-all;
+	font-weight:bold;
+	&:hover, &:focus,&.focus,&:active,&.active {
+		color: #fff;
+		background-color: #444;
+	}
+}
+.aboutus {
+	.abouttext {
+		padding-top: 70px;
+		text-align:center;
+		h3 {
+			padding-bottom: 20px;
+		}
+		p{
+			color: $clp;
+			font-family: Nunito Sans;
+		}
+		img{
+			padding-bottom: 70px;
+		}
+	}
+}
+.proskill {
+	background: url("../images/skill.jpg");
+	background-size: cover;
+	background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+	margin: 0;
+
+	.protext {
+		padding-bottom: 40px;
+		padding-top: 40px;
+		.progress {
+			height: 4px;
+		}
+		h3 {
+			font-family: Montserrat,Medium;
+			font-weight: bold;
+		}
+		p{
+			text-transform: uppercase;
+			font-size: 12px;
+			font-weight: bold;
+			font-family: Montserrat,Medium;
+			padding-top: 20px;
+		}
+	}
+
+}
+.total {
+	background-color: #10c9c3;
+	.row {
+		padding-top: 60px;
+		padding-bottom: 60px;
+		color: white;
+		.totaltext {
+			display: inline-block;
+			
+			h6 {
+				font-weight: bold;
+				font-family: Montserrat,Medium;
+				margin: 0;
+			}
+			p {
+				font-size: 12px;
+				font-weight: bold;
+				font-family: Montserrat,Medium;
+				text-transform: uppercase;
 			}
 		}
 	}
+}
+.product {
+	@include transition-all;
+	.proimg {
+		padding: 0;
+		img {
+			&:hover{ 
+				opacity: 0.3;
+				transition: .3s ease;
+			}
+		}
+		.overlay {
+		  position: absolute;
+		  top: 0;
+		  bottom: 0;
+		  left: 0;
+		  right: 0;
+		  height: 100%;
+		  width: 100%;
+		  opacity: 0;
+		  transition: .3s ease;
+		  background-color: black;
+		  &:hover {
+		  	opacity: 0.4;
+		  }
+		}
+		.overlay2 {
+		  position: absolute;
+		  top: 0;
+		  bottom: 0;
+		  left: 0;
+		  right: 0;
+		  height: 100%;
+		  width: 100%;
+		  opacity: 0;
+		  transition: .3s ease;
+		  background-color: $clactive;
+		  &:hover {
+		  	opacity: 0.4;
+		  }
+		}
+	}
+	.load
+	{
+		button {
+				display: block;
+			    width: 100%;
+			    border: none;
+			    cursor: pointer;
+			    text-align: center;
+				color: $clp;
+				background-color: $lightdark;
+				padding: 20px 0 15px 0;
+				font-size: 12px;
+				font-weight: bold;
+				font-family: Montserrat,Medium;
+				text-transform: uppercase;		    
+		}
+	}
+}
+
+.ourwork {
+	.ourtext {
+		padding-top: 70px;
+		text-align:center;
+		padding-bottom: 70px;
+		h3 {
+			padding-bottom: 20px;
+		}
+		p{
+			color: $clp;
+			font-family: Nunito Sans;
+		}
+	}
+}
+.skill {
+	margin-top: 60px;
+	background-color: $lightdark;
+	padding: 40px 0 40px 0;
+	.skilltext {
+		text-align: center;
+		a { 
+			text-decoration: none;
+			.pe-va{ 
+			    transition:  0.8s ease-out;
+			  }
+			  
+			  &:hover {
+			    .pe-va{
+			      transform: rotateZ(360deg);
+			    }
+			  }
+			}
+		i {
+			padding-bottom: 10px;
+			color: black;
+
+		}
+		h6 {
+			color: black;
+			font-weight: bold;
+			font-family: Montserrat,Medium;
+			margin: 0;
+			font-size: 9pt;
+			text-transform: uppercase;
+			padding-bottom: 10px;
+		}
+		p {
+			font-size: 12px;
+			font-weight: bold;
+			font-family: Montserrat,Medium;
+
+			color: $clp;
+		}
+
+	}
+}
+.slideshow-container {
+	position: relative;
+	background-color: $clxanh;
+	.mySlides {
+		display: none;
+		padding: 100px;
+		padding-top: 120px;
+		text-align: center;
+		h3 {
+			font-family: Montserrat,Medium;
+			font-size: 20pt;
+			color: white;
+			font-weight: bold;
+		}
+		.author {
+			font-weight: bold;
+			font-family: Montserrat,Medium;
+			font-size: 9pt;
+			text-transform: uppercase;
+			color: white;
+			padding-top: 10px;
+		}
+	}
+}
+
+.dot-container {
+	text-align: center;
+	padding: 20px;
+	background-color: $clxanh;
+	.dot {
+		cursor: pointer;
+		height: 15px;
+		width: 15px;
+		margin: 0 2px;
+		background-color: white;
+		border-radius: 50%;
+		display: inline-block;
+		transition: background-color 0.6s ease;
+		&.active, &:hover {
+			background-color: $cldark;
+		}
+	}
+}
+.logo {
+	padding: 70px;
+	.col-half-offset{
+    margin-left:4.166666667%
+	}
+}
+.formproject {
+	padding: 0;
+	.formtext {
+		padding: 60px;
+		background-color: $lightdark;
+		text-align: center;
+		form {
+
+			margin-left:auto;
+ 			margin-right:auto;
+ 			::placeholder {
+ 				font-family: Nunito Sans;
+				font-size: 10pt;
+ 			}
+ 			.panel-footer {
+ 				padding-top: 10px;
+ 				input[type=submit] {
+ 				background-color: $clxanh;
+ 				color: $cltrang;
+ 				border: none;
+ 				font-weight: bold;
+				font-family: Montserrat,Medium;
+				font-size: 9pt;
+				padding: 15px 20px 15px 20px;
+					&:hover,&:focus
+					{
+					background-color: $clxanhduong;
+					border-color: $clxanhduong;
+					}
+ 				}
+ 			}
+		}
+		h3 {
+			font-family: Nunito Sans;
+			font-weight: bold;
+		}
+		p {
+			color: $clp;
+			font-family: Nunito Sans;
+			font-size: 10pt;
+		}
+	}
+}
+.uiux {
+	background-color: $lightdark;
+	color: $clnor;
+	text-align: center;
+	padding: 50px 0 50px 0;
+}
+.amelia {
+	background: url("../images/aboutban.jpg");
+	background-size: cover;
+	background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+	margin: 0;
+	text-align: center;
+	.ameliatext {
+		padding-bottom: 80px;
+		padding-top: 80px;
+		color: white;
+		h3 {
+			font-family: Montserrat,Medium;
+		}
+		p{
+			font-family: Nunito Sans;
+		}
+	}
+
+}
+.footer {
+	padding: 50px;
+	background-color: $clnor;
+	p {
+		color: #cldark;
+	}
+	h5 {
+		color: white;
+		padding-bottom: 10px;
+	}
+	ul {
+		li{
+			list-style-type: none;
+		}
+		a {
+			text-decoration: none;
+			color: $cldark;
+		}
+		
+	}
+	.ul1{
+			float: left;
+		}
+		.ul2 {
+			float: right;
+		}
 }

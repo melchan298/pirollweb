@@ -1,6 +1,365 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito+Sans");
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
-.navbar.menu .navbar-nav .nav-item a {
-  color: #171717; }
+#mainNav {
+  border-color: rgba(23, 23, 23, 0.05);
+  background-color: white;
+  -webkit-transition: all .35s;
+  -moz-transition: all .35s;
+  transition: all 0.3s; }
+  #mainNav .navbar-brand {
+    color: #4ad1cc; }
+    #mainNav .navbar-brand:hover, #mainNav .navbar-brand:focus {
+      color: #2fb9b4; }
+  #mainNav .navbar-toggler {
+    font-size: 12px;
+    padding: 8px 10px;
+    color: #171717; }
+  #mainNav .navbar-nav > li > a {
+    font-size: 11px;
+    font-family: Montserrat,Medium;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 13px; }
+    #mainNav .navbar-nav > li > a.active {
+      color: #4ad1cc !important;
+      background-color: transparent; }
+      #mainNav .navbar-nav > li > a.active:hover {
+        background-color: transparent; }
+  #mainNav .navbar-nav > li > a,
+  #mainNav .navbar-nav > li > a:focus {
+    color: #171717; }
+    #mainNav .navbar-nav > li > a:hover,
+    #mainNav .navbar-nav > li > a:focus:hover {
+      color: #4ad1cc; }
+  @media (min-width: 992px) {
+    #mainNav {
+      border-color: transparent;
+      background-color: transparent; }
+      #mainNav .navbar-brand {
+        color: #171717; }
+        #mainNav .navbar-brand:hover, #mainNav .navbar-brand:focus {
+          color: #171717; }
+      #mainNav .navbar-nav > li > a,
+      #mainNav .navbar-nav > li > a:focus {
+        color: #171717; }
+        #mainNav .navbar-nav > li > a:hover,
+        #mainNav .navbar-nav > li > a:focus:hover {
+          color: #4ad1cc; }
+      #mainNav.light-menu {
+        border-color: rgba(23, 23, 23, 0.1);
+        background-color: white; }
+        #mainNav.light-menu .navbar-brand {
+          color: #171717; }
+          #mainNav.light-menu .navbar-brand:hover, #mainNav.light-menu .navbar-brand:focus {
+            color: #4ad1cc; }
+        #mainNav.light-menu .navbar-nav > li > a,
+        #mainNav.light-menu .navbar-nav > li > a:focus {
+          color: #171717; }
+          #mainNav.light-menu .navbar-nav > li > a:hover,
+          #mainNav.light-menu .navbar-nav > li > a:focus:hover {
+            color: #4ad1cc; } }
+
+.intro {
+  display: table;
+  width: 100%;
+  padding: 0;
+  background: url(../images/banner.jpg) no-repeat center center;
+  background-color: #e5e5e5;
+  background-size: cover;
+  font-family: Montserrat; }
+  .intro .overlay {
+    background: rgba(255, 255, 255, 0.2); }
+  .intro h1 {
+    color: #171717;
+    font-size: 34px;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-weight: bold; }
+  .intro p {
+    color: #787878;
+    font-size: 12px;
+    margin-top: 27px;
+    margin-bottom: 40px;
+    line-height: 1.7; }
+  .intro .intro-text {
+    padding-top: 300px;
+    padding-bottom: 200px;
+    padding-left: 600px; }
+
+@media screen and (max-width: 800px) {
+  .intro .intro-text {
+    padding-left: 0; } }
+.btn-custom {
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #21bfb9;
+  border: 0;
+  padding: 14px 30px;
+  margin: 0;
+  font-size: 12px;
+  border-radius: 2px;
+  -webkit-transition: all .35s;
+  -moz-transition: all .35s;
+  transition: all 0.3s;
+  font-weight: bold; }
+  .btn-custom:hover, .btn-custom:focus, .btn-custom.focus, .btn-custom:active, .btn-custom.active {
+    color: #fff;
+    background-color: #444; }
+
+.aboutus .abouttext {
+  padding-top: 70px;
+  text-align: center; }
+  .aboutus .abouttext h3 {
+    padding-bottom: 20px; }
+  .aboutus .abouttext p {
+    color: #787878;
+    font-family: Nunito Sans; }
+  .aboutus .abouttext img {
+    padding-bottom: 70px; }
+
+.proskill {
+  background: url("../images/skill.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0; }
+  .proskill .protext {
+    padding-bottom: 40px;
+    padding-top: 40px; }
+    .proskill .protext .progress {
+      height: 4px; }
+    .proskill .protext h3 {
+      font-family: Montserrat,Medium;
+      font-weight: bold; }
+    .proskill .protext p {
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: bold;
+      font-family: Montserrat,Medium;
+      padding-top: 20px; }
+
+.total {
+  background-color: #10c9c3; }
+  .total .row {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    color: white; }
+    .total .row .totaltext {
+      display: inline-block; }
+      .total .row .totaltext h6 {
+        font-weight: bold;
+        font-family: Montserrat,Medium;
+        margin: 0; }
+      .total .row .totaltext p {
+        font-size: 12px;
+        font-weight: bold;
+        font-family: Montserrat,Medium;
+        text-transform: uppercase; }
+
+.product {
+  -webkit-transition: all .35s;
+  -moz-transition: all .35s;
+  transition: all 0.3s; }
+  .product .proimg {
+    padding: 0; }
+    .product .proimg img:hover {
+      opacity: 0.3;
+      transition: .3s ease; }
+    .product .proimg .overlay {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+      transition: .3s ease;
+      background-color: black; }
+      .product .proimg .overlay:hover {
+        opacity: 0.4; }
+    .product .proimg .overlay2 {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+      transition: .3s ease;
+      background-color: #4ad1cc; }
+      .product .proimg .overlay2:hover {
+        opacity: 0.4; }
+  .product .load button {
+    display: block;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    color: #787878;
+    background-color: #f5f5f5;
+    padding: 20px 0 15px 0;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: Montserrat,Medium;
+    text-transform: uppercase; }
+
+.ourwork .ourtext {
+  padding-top: 70px;
+  text-align: center;
+  padding-bottom: 70px; }
+  .ourwork .ourtext h3 {
+    padding-bottom: 20px; }
+  .ourwork .ourtext p {
+    color: #787878;
+    font-family: Nunito Sans; }
+
+.skill {
+  margin-top: 60px;
+  background-color: #f5f5f5;
+  padding: 40px 0 40px 0; }
+  .skill .skilltext {
+    text-align: center; }
+    .skill .skilltext a {
+      text-decoration: none; }
+      .skill .skilltext a .pe-va {
+        transition: 0.8s ease-out; }
+      .skill .skilltext a:hover .pe-va {
+        transform: rotateZ(360deg); }
+    .skill .skilltext i {
+      padding-bottom: 10px;
+      color: black; }
+    .skill .skilltext h6 {
+      color: black;
+      font-weight: bold;
+      font-family: Montserrat,Medium;
+      margin: 0;
+      font-size: 9pt;
+      text-transform: uppercase;
+      padding-bottom: 10px; }
+    .skill .skilltext p {
+      font-size: 12px;
+      font-weight: bold;
+      font-family: Montserrat,Medium;
+      color: #787878; }
+
+.slideshow-container {
+  position: relative;
+  background-color: #21bfb9; }
+  .slideshow-container .mySlides {
+    display: none;
+    padding: 100px;
+    padding-top: 120px;
+    text-align: center; }
+    .slideshow-container .mySlides h3 {
+      font-family: Montserrat,Medium;
+      font-size: 20pt;
+      color: white;
+      font-weight: bold; }
+    .slideshow-container .mySlides .author {
+      font-weight: bold;
+      font-family: Montserrat,Medium;
+      font-size: 9pt;
+      text-transform: uppercase;
+      color: white;
+      padding-top: 10px; }
+
+.dot-container {
+  text-align: center;
+  padding: 20px;
+  background-color: #21bfb9; }
+  .dot-container .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: white;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease; }
+    .dot-container .dot.active, .dot-container .dot:hover {
+      background-color: #555555; }
+
+.logo {
+  padding: 70px; }
+  .logo .col-half-offset {
+    margin-left: 4.166666667%; }
+
+.formproject {
+  padding: 0; }
+  .formproject .formtext {
+    padding: 60px;
+    background-color: #f5f5f5;
+    text-align: center; }
+    .formproject .formtext form {
+      margin-left: auto;
+      margin-right: auto; }
+      .formproject .formtext form ::placeholder {
+        font-family: Nunito Sans;
+        font-size: 10pt; }
+      .formproject .formtext form .panel-footer {
+        padding-top: 10px; }
+        .formproject .formtext form .panel-footer input[type=submit] {
+          background-color: #21bfb9;
+          color: #FFF;
+          border: none;
+          font-weight: bold;
+          font-family: Montserrat,Medium;
+          font-size: 9pt;
+          padding: 15px 20px 15px 20px; }
+          .formproject .formtext form .panel-footer input[type=submit]:hover, .formproject .formtext form .panel-footer input[type=submit]:focus {
+            background-color: #0ba2db;
+            border-color: #0ba2db; }
+    .formproject .formtext h3 {
+      font-family: Nunito Sans;
+      font-weight: bold; }
+    .formproject .formtext p {
+      color: #787878;
+      font-family: Nunito Sans;
+      font-size: 10pt; }
+
+.uiux {
+  background-color: #f5f5f5;
+  color: #171717;
+  text-align: center;
+  padding: 50px 0 50px 0; }
+
+.amelia {
+  background: url("../images/aboutban.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0;
+  text-align: center; }
+  .amelia .ameliatext {
+    padding-bottom: 80px;
+    padding-top: 80px;
+    color: white; }
+    .amelia .ameliatext h3 {
+      font-family: Montserrat,Medium; }
+    .amelia .ameliatext p {
+      font-family: Nunito Sans; }
+
+.footer {
+  padding: 50px;
+  background-color: #171717; }
+  .footer p {
+    color: #cldark; }
+  .footer h5 {
+    color: white;
+    padding-bottom: 10px; }
+  .footer ul li {
+    list-style-type: none; }
+  .footer ul a {
+    text-decoration: none;
+    color: #555555; }
+  .footer .ul1 {
+    float: left; }
+  .footer .ul2 {
+    float: right; }
 
 /*# sourceMappingURL=custom.css.map */
