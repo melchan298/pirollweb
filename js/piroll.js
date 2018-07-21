@@ -70,14 +70,10 @@ $(window).scroll(function() {
     var scroll = $(window).scrollTop();
     console.log(scroll);
     if(scroll > 130) {
-      $('#mainNav').addClass('light-menu animated fadeInDown');
-      $('#mainNav').removeClass('fadeInDown');
+      $('#mainNav').addClass('light-menu');
     }
     else {
-      $('#mainNav').removeClass('animated fadeInDown');
-      setTimeout(function(){
-        $('#mainNav').removeClass('light-menu');
-        $('#mainNav').addClass('animated fadeInDown');},200);
+      $('#mainNav').removeClass('light-menu');
     }
 });
   ( function($) {
