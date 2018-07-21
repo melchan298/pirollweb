@@ -19,9 +19,16 @@
 	<!-- Latest compiled JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="css/custom.css">
+  <link rel=”stylesheet” href=”https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css”>
+  <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/hover-min.css">
 	<title></title>
 </head>
 <body id="page-top">
+  <div id="preloader">
+    <div id="status">&nbsp;</div>
+  </div>
 	<nav class="navbar navbar-expand-lg navbar-light light-menu" id="mainNav">
       <div class="container">
         <a class="navbar-brand js-scroll-trigger" href="#page-top"><i class="pe-7s-diamond pe-2x pe-va" style="color: black"></i></a>
@@ -32,13 +39,13 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#home">Home</a>
+              <a class="nav-link js-scroll-trigger hvr-forward" href="#home">Home</a>
             </li>
             <li class="nav-item">
-              <a class="js-scroll-trigger nav-link" href="#about">About</a>
+              <a class="js-scroll-trigger nav-link hvr-forward" href="about.html">About</a>
             </li>
             <li class="nav-item">
-              <a class="js-scroll-trigger nav-link" href="#contact">Contact</a>
+              <a class="js-scroll-trigger nav-link hvr-forward" href="contact.html">Contact</a>
             </li>
           </ul>
         </div>
@@ -157,3 +164,9 @@
 	    </div>
   	</div>
 </body>
+<script type="text/javascript" src="js/piroll.js"></script>
+<script src="js/preloader.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+<script>
+new WOW().init();
+</script>

@@ -1,5 +1,35 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito+Sans");
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
+body {
+  overflow: hidden; }
+
+/* Preloader */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  /* change if the mask should have another color then white */
+  z-index: 99;
+  /* makes sure it stays on top */ }
+
+#status {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  left: 50%;
+  /* centers the loading animation horizontally one the screen */
+  top: 50%;
+  /* centers the loading animation vertically one the screen */
+  background-image: url(https://raw.githubusercontent.com/niklausgerber/PreLoadMe/master/img/status.gif);
+  /* path to your loading animation */
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: -100px 0 0 -100px;
+  /* is width and height divided by two */ }
+
 #mainNav {
   border-color: rgba(23, 23, 23, 0.05);
   background-color: white;
@@ -15,10 +45,9 @@
     padding: 8px 10px;
     color: #171717; }
   #mainNav .navbar-nav > li > a {
-    font-size: 11px;
     font-family: Montserrat,Medium;
-    text-transform: uppercase;
     font-weight: bold;
+    text-transform: uppercase;
     font-size: 13px; }
     #mainNav .navbar-nav > li > a.active {
       color: #4ad1cc !important;
@@ -59,15 +88,20 @@
           #mainNav.light-menu .navbar-nav > li > a:focus:hover {
             color: #4ad1cc; } }
 
+#header {
+  height: 100vh; }
+
 .intro {
   display: table;
   width: 100%;
+  height: 100vh;
   padding: 0;
   background: url(../images/banner.jpg) no-repeat center center;
   background-color: #e5e5e5;
   background-size: cover;
-  font-family: Montserrat; }
-  .intro .overlay {
+  font-family: Montserrat;
+  position: relative; }
+  .intro .overlay, .intro .product .proimg .overlay2, .product .proimg .intro .overlay2 {
     background: rgba(255, 255, 255, 0.2); }
   .intro h1 {
     color: #171717;
@@ -83,9 +117,9 @@
     margin-bottom: 40px;
     line-height: 1.7; }
   .intro .intro-text {
-    padding-top: 300px;
-    padding-bottom: 200px;
-    padding-left: 600px; }
+    top: 37%;
+    right: 20%;
+    position: absolute; }
 
 @media screen and (max-width: 800px) {
   .intro .intro-text {
@@ -118,44 +152,46 @@
   .aboutus .abouttext img {
     padding-bottom: 70px; }
 
-.proskill {
-  background: url("../images/skill.jpg");
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  margin: 0; }
-  .proskill .protext {
-    padding-bottom: 40px;
-    padding-top: 40px; }
-    .proskill .protext .progress {
-      height: 4px; }
-    .proskill .protext h3 {
+.departments {
+  position: relative;
+  width: 100%;
+  background: transparent;
+  padding-top: 75px;
+  padding-bottom: 65px; }
+  .departments .departments_background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+  .departments .dept_col {
+    margin-bottom: 30px; }
+    .departments .dept_col .dept .protext {
       font-family: Montserrat,Medium;
-      font-weight: bold; }
-    .proskill .protext p {
-      text-transform: uppercase;
-      font-size: 12px;
       font-weight: bold;
-      font-family: Montserrat,Medium;
-      padding-top: 20px; }
+      padding-bottom: 40px;
+      padding-top: 40px; }
+      .departments .dept_col .dept .protext .progress {
+        height: 4px; }
+      .departments .dept_col .dept .protext p {
+        text-transform: uppercase;
+        font-size: 12px;
+        padding-top: 20px; }
 
 .total {
   background-color: #10c9c3; }
   .total .row {
     padding-top: 60px;
     padding-bottom: 60px;
-    color: white; }
+    color: #FFF; }
     .total .row .totaltext {
-      display: inline-block; }
+      display: inline-block;
+      font-family: Montserrat,Medium;
+      font-weight: bold; }
       .total .row .totaltext h6 {
-        font-weight: bold;
-        font-family: Montserrat,Medium;
         margin: 0; }
       .total .row .totaltext p {
         font-size: 12px;
-        font-weight: bold;
-        font-family: Montserrat,Medium;
         text-transform: uppercase; }
 
 .product {
@@ -167,7 +203,7 @@
     .product .proimg img:hover {
       opacity: 0.3;
       transition: .3s ease; }
-    .product .proimg .overlay {
+    .product .proimg .overlay, .product .proimg .overlay2 {
       position: absolute;
       top: 0;
       bottom: 0;
@@ -178,34 +214,37 @@
       opacity: 0;
       transition: .3s ease;
       background-color: black; }
-      .product .proimg .overlay:hover {
+      .product .proimg .overlay:hover, .product .proimg .overlay2:hover {
         opacity: 0.4; }
     .product .proimg .overlay2 {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 100%;
-      width: 100%;
-      opacity: 0;
-      transition: .3s ease;
       background-color: #4ad1cc; }
-      .product .proimg .overlay2:hover {
-        opacity: 0.4; }
-  .product .load button {
-    display: block;
-    width: 100%;
-    border: none;
-    cursor: pointer;
-    text-align: center;
-    color: #787878;
-    background-color: #f5f5f5;
-    padding: 20px 0 15px 0;
-    font-size: 12px;
-    font-weight: bold;
+  .product .load {
     font-family: Montserrat,Medium;
-    text-transform: uppercase; }
+    font-weight: bold; }
+    .product .load button {
+      font-size: 12px;
+      text-transform: uppercase;
+      border: none;
+      background: #f5f5f5;
+      color: #787878;
+      padding: 10px;
+      border-radius: 5px;
+      position: relative;
+      width: 100%;
+      box-sizing: border-box;
+      transition: all 500ms ease; }
+      .product .load button:before {
+        content: '';
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 0px;
+        height: 42px;
+        background: rgba(255, 209, 204, 0.4);
+        color: #FFF;
+        transition: all 2s ease; }
+      .product .load button:hover:before {
+        width: 100%; }
 
 .ourwork .ourtext {
   padding-top: 70px;
@@ -222,7 +261,9 @@
   background-color: #f5f5f5;
   padding: 40px 0 40px 0; }
   .skill .skilltext {
-    text-align: center; }
+    text-align: center;
+    font-family: Montserrat,Medium;
+    font-weight: bold; }
     .skill .skilltext a {
       text-decoration: none; }
       .skill .skilltext a .pe-va {
@@ -234,16 +275,12 @@
       color: black; }
     .skill .skilltext h6 {
       color: black;
-      font-weight: bold;
-      font-family: Montserrat,Medium;
       margin: 0;
       font-size: 9pt;
       text-transform: uppercase;
       padding-bottom: 10px; }
     .skill .skilltext p {
       font-size: 12px;
-      font-weight: bold;
-      font-family: Montserrat,Medium;
       color: #787878; }
 
 .slideshow-container {
@@ -253,18 +290,15 @@
     display: none;
     padding: 100px;
     padding-top: 120px;
-    text-align: center; }
+    text-align: center;
+    font-family: Montserrat,Medium;
+    font-weight: bold;
+    color: #FFF; }
     .slideshow-container .mySlides h3 {
-      font-family: Montserrat,Medium;
-      font-size: 20pt;
-      color: white;
-      font-weight: bold; }
+      font-size: 20pt; }
     .slideshow-container .mySlides .author {
-      font-weight: bold;
-      font-family: Montserrat,Medium;
       font-size: 9pt;
       text-transform: uppercase;
-      color: white;
       padding-top: 10px; }
 
 .dot-container {
@@ -276,7 +310,7 @@
     height: 15px;
     width: 15px;
     margin: 0 2px;
-    background-color: white;
+    background-color: #FFF;
     border-radius: 50%;
     display: inline-block;
     transition: background-color 0.6s ease; }
@@ -292,8 +326,8 @@
   padding: 0; }
   .formproject .formtext {
     padding: 60px;
-    background-color: #f5f5f5;
-    text-align: center; }
+    text-align: center;
+    background-color: #e9ecef; }
     .formproject .formtext form {
       margin-left: auto;
       margin-right: auto; }
@@ -302,15 +336,15 @@
         font-size: 10pt; }
       .formproject .formtext form .panel-footer {
         padding-top: 10px; }
-        .formproject .formtext form .panel-footer input[type=submit] {
-          background-color: #21bfb9;
+        .formproject .formtext form .panel-footer button {
+          background-color: black;
           color: #FFF;
           border: none;
-          font-weight: bold;
           font-family: Montserrat,Medium;
+          font-weight: bold;
           font-size: 9pt;
           padding: 15px 20px 15px 20px; }
-          .formproject .formtext form .panel-footer input[type=submit]:hover, .formproject .formtext form .panel-footer input[type=submit]:focus {
+          .formproject .formtext form .panel-footer button:hover, .formproject .formtext form .panel-footer button:focus {
             background-color: #0ba2db;
             border-color: #0ba2db; }
     .formproject .formtext h3 {
@@ -328,29 +362,87 @@
   padding: 50px 0 50px 0; }
 
 .amelia {
-  background: url("../images/aboutban.jpg");
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
+  position: relative;
   margin: 0;
   text-align: center; }
+  .amelia .amelia_background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
   .amelia .ameliatext {
     padding-bottom: 80px;
     padding-top: 80px;
-    color: white; }
+    color: #FFF; }
     .amelia .ameliatext h3 {
       font-family: Montserrat,Medium; }
     .amelia .ameliatext p {
       font-family: Nunito Sans; }
 
+.aboutme {
+  padding: 0;
+  margin: 0; }
+  .aboutme .aboutimg {
+    background: url("../images/aboutme.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0; }
+  .aboutme .abouttext {
+    padding: 100px 0 100px 40px; }
+
+.project {
+  text-align: center;
+  padding: 80px 0 80px 0; }
+  .project h3 {
+    font-family: Montserrat,Medium;
+    font-weight: bold; }
+  .project p {
+    font-family: Nunito Sans;
+    color: #555555;
+    font-size: 10pt; }
+
+.foodlist {
+  padding: 0;
+  margin: 0; }
+  .foodlist .foodtext {
+    padding: 80px 0 80px 80px; }
+    .foodlist .foodtext h3 {
+      font-family: Montserrat,Medium;
+      font-weight: bold;
+      padding-bottom: 20px; }
+    .foodlist .foodtext p {
+      font-family: Nunito Sans;
+      color: #555555;
+      font-size: 10pt; }
+
+.contact {
+  margin: 0;
+  padding: 0; }
+  .contact .contacttext {
+    padding-top: 53px; }
+    .contact .contacttext h3 {
+      font-family: Montserrat,Medium;
+      font-weight: bold;
+      padding-bottom: 20px; }
+    .contact .contacttext p {
+      font-family: Nunito Sans;
+      color: #555555;
+      font-size: 10pt; }
+
+#map-canvas {
+  height: 500px;
+  width: 100%;
+  margin: 0px;
+  padding: 0; }
+
 .footer {
   padding: 50px;
   background-color: #171717; }
   .footer p {
-    color: #cldark; }
+    color: #555555; }
   .footer h5 {
-    color: white;
+    color: #FFF;
     padding-bottom: 10px; }
   .footer ul li {
     list-style-type: none; }

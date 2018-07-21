@@ -18,10 +18,17 @@
 
 	<!-- Latest compiled JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  <link rel=”stylesheet” href=”https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css”>
 	<link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/hover-min.css">
 	<title></title>
 </head>
 <body id="page-top">
+  <div id="preloader">
+    <div id="status">&nbsp;</div>
+  </div>
+
 	<nav class="navbar navbar-expand-lg navbar-light light-menu" id="mainNav">
       <div class="container">
         <a class="navbar-brand js-scroll-trigger" href="#page-top"><i class="pe-7s-diamond pe-2x pe-va" style="color: black"></i></a>
@@ -32,58 +39,91 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#home">Home</a>
+              <a class="nav-link js-scroll-trigger hvr-forward" href="#home">Home</a>
             </li>
             <li class="nav-item">
-              <a class="js-scroll-trigger nav-link" href="#about">About</a>
+              <a class="js-scroll-trigger nav-link hvr-forward" href="#about">About</a>
             </li>
             <li class="nav-item">
-              <a class="js-scroll-trigger nav-link" href="#contact">Contact</a>
+              <a class="js-scroll-trigger nav-link hvr-forward" href="#contact">Contact</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-    <div class="amelia container-fluid">
-    	<div class="ameliatext">
-    		<h3>Amelia Woods</h3>
-    		<p>I am a Graphic & Web Designer based in New York, specializing <br>
-		in User Interface Design and Development.</p>
-    	</div>
+    <div class="amelia">
+      <div class="amelia_background parallax-window" data-parallax="scroll" data-image-src="images/aboutban.jpg" data-speed="0.8"></div>
+      <div class="container">
+        <div class="ameliatext wow bounceInDown" data-wow-delay="0.5s">
+          <h3>Amelia Woods</h3>
+          <p>I am a Graphic & Web Designer based in New York, specializing <br>
+      in User Interface Design and Development.</p>
+        </div>
+      </div>
+    	
     	
     </div>
     <div class="total container-fluid">
       <div class="container">
         <div class="row">
-          <div class="col-sm-3 col-md-3">
+          <div class="col-md-3 col-6">
             <i class="pe-7s-portfolio pe-3x pe-va"></i>
             <div class="totaltext">
-              <h6>548</h6>
+              <span class="number"><h6>548</h6></span>
               <p>projects completed</p>
             </div>
           </div>
-          <div class="col-sm-3 col-md-3">
+          <div class="col-md-3 col-6">
             <i class="pe-7s-clock pe-3x pe-va"></i>
             <div class="totaltext">
-              <h6>1465</h6>
-              <p>WORKING HOURS</p>
+              <span class="number"><h6>1465</h6></span>
+              <p>WORKING HOURSSSS</p>
             </div>
           </div>
-          <div class="col-sm-3 col-md-3">
+          <div class="col-md-3 col-6">
             <i class="pe-7s-star pe-3x pe-va"></i>
             <div class="totaltext">
-              <h6>612</h6>
+              <span class="number"><h6>612</h6></span>
               <p>POSITIVE FEEDBACKS</p>
             </div>
           </div>
-          <div class="col-sm-3 col-md-3">
+          <div class="col-md-3 col-6">
             <i class="pe-7s-like pe-3x pe-va"></i>
             <div class="totaltext">
-              <h6>735</h6>
-              <p>HAPPY CLIENTS</p>
+              <span class="number"><h6>735</h6></span>
+              <p>HAPPY CLIENTSSSS</p>
             </div>
           </div>
         </div>
+      </div>
+    </div>
+    <div class="aboutme jumbotron jumbotron-fluid">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-6 col-xs-6 col-6 aboutimg wow slideInLeft" data-wow-duration="2s" data-wow-delay=".2s" >
+            
+          </div>
+          <div class="col-md-6 col-xs-6 col-6 abouttext wow slideInRight" data-wow-duration="2s" data-wow-delay=".2s">
+          	<h3>About me</h3>
+          	<p>Given let waters air sea had you'll, may seed abundantly fish.<br>
+      			Were, you'll earth forth winged above brought. Own darkness <br>
+      			they're him can't fourth sea place have.<br>
+      			<br>
+      			So the above May stars cattle fruitful face shall. Tree it, winged.<br>
+      			Every signs male firmament us. Morning him.</p>
+      			<img src="images/signature.png" class="img-fluid">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="project">
+      <div class="container-fluid">
+      	<div class="protext">
+      		<h3>Need a Project?</h3>
+          	<p>Let us know what you're looking for in an agency. We'll take a look and see <br>
+			if this could be the start of something beautiful.</p>
+			<a href="#" class="btn btn-custom btn-lg ">Let's talk</a> </div>
+      	</div>
       </div>
     </div>
     <div class="footer container-fluid">
@@ -124,3 +164,13 @@
 	    </div>
   	</div>
  </body>
+ <script src="js/parallax-js-master/parallax.js"></script>
+ <script type="text/javascript" src="js/piroll.js"></script>
+<script type="text/javascript">
+  $('.parallax-window').parallax({imageSrc: 'images/aboutban.jpg'});
+</script>
+<script src="js/preloader.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+<script>
+new WOW().init();
+</script>

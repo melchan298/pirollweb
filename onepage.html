@@ -19,9 +19,16 @@
 	<!-- Latest compiled JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/hover-min.css">
+  <link rel=”stylesheet” href=”https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css”>
 	<title></title>
 </head>
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+  <div id="preloader">
+    <div id="status">&nbsp;</div>
+  </div>
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
         <a class="navbar-brand js-scroll-trigger" href="#page-top"><i class="pe-7s-diamond pe-2x pe-va" style="color: black"></i></a>
@@ -32,25 +39,25 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#home">Home</a>
+              <a class="nav-link js-scroll-trigger hvr-forward" href="#page-top">Home</a>
             </li>
             <li class="nav-item">
-              <a class="js-scroll-trigger nav-link" href="#about">About</a>
+              <a class="js-scroll-trigger nav-link hvr-forward" href="#about">About</a>
             </li>
             <li class="nav-item">
-              <a class="js-scroll-trigger nav-link" href="#work">Work</a>
+              <a class="js-scroll-trigger nav-link hvr-forward" href="#work">Work</a>
             </li>
             <li class="nav-item">
-              <a class="js-scroll-trigger nav-link" href="#process">Process</a>
+              <a class="js-scroll-trigger nav-link hvr-forward" href="#process">Process</a>
             </li>
             <li class="nav-item">
-              <a class="js-scroll-trigger nav-link" href="#service">Services</a>
+              <a class="js-scroll-trigger nav-link hvr-forward" href="#service">Services</a>
             </li>
             <li class="nav-item">
-              <a class="js-scroll-trigger nav-link" href="#testi">Testimonials</a>
+              <a class="js-scroll-trigger nav-link hvr-forward" href="#testi">Testimonials</a>
             </li>
             <li class="nav-item">
-              <a class="js-scroll-trigger nav-link" href="#contact">Contact</a>
+              <a class="js-scroll-trigger nav-link hvr-forward" href="#contact">Contact</a>
             </li>
           </ul>
         </div>
@@ -89,61 +96,79 @@
       </div>
     </div>
   </section>
-  <section id="work">
-    <div class="proskill jumbotron jumbotron-fluid">
-      <div class="container">
+  <div class="departments">
+    <div class="departments_background parallax-window" data-parallax="scroll" data-image-src="images/skill.jpg" data-speed="0.8"></div>
+    <div class="container">
         <div class="row">
-          <div class="col-md-6 col-xs-6 protext">
-            <h3>Professional Skills</h3> 
-            <p>UI/UX Design    75%</p> 
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+        <!-- Department -->
+          <div class="col-lg-6 col-md-12 dept_col">
+            <div class="dept" >
+              <div class="our_skill_inner">
+                <div class="protext">
+                  <h3>Professional Skills</h3> 
+                  <p>UI/UX Design    75%</p> 
+                  <div class="progress">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <p>web development    90%</p>
+                  <div class="progress">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <p>marketing    65%</p>
+                  <div class="progress">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <p>web development    90%</p>
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-            <p>marketing    65%</p>
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div>
-          <div class="col-md-6 col-xs-6">
           </div>
         </div>
-      </div>
+
+        <!-- Department -->
+        <div class="col-lg-6 col-md-12 dept_col">
+          
+        </div>
     </div>
+  </div>
+  <!--
+  <section id="work">
+    <div class="proskill">
+
+    </div>
+    
   </section>
+  -->
+
   <section id="process">
     <div class="total container-fluid">
       <div class="container">
         <div class="row">
-          <div class="col-sm-3 col-md-3">
+          <div class="col-md-3 col-6">
             <i class="pe-7s-portfolio pe-3x pe-va"></i>
             <div class="totaltext">
-              <h6>548</h6>
+              <span class="number"><h6>548</h6></span>
               <p>projects completed</p>
             </div>
           </div>
-          <div class="col-sm-3 col-md-3">
+          <div class="col-md-3 col-6">
             <i class="pe-7s-clock pe-3x pe-va"></i>
             <div class="totaltext">
-              <h6>1465</h6>
-              <p>WORKING HOURS</p>
+              <span class="number"><h6>1465</h6></span>
+              <p>WORKING HOURSSSS</p>
             </div>
           </div>
-          <div class="col-sm-3 col-md-3">
+          <div class="col-md-3 col-6">
             <i class="pe-7s-star pe-3x pe-va"></i>
             <div class="totaltext">
-              <h6>612</h6>
+              <span class="number"><h6>612</h6></span>
               <p>POSITIVE FEEDBACKS</p>
             </div>
           </div>
-          <div class="col-sm-3 col-md-3">
+          <div class="col-md-3 col-6">
             <i class="pe-7s-like pe-3x pe-va"></i>
             <div class="totaltext">
-              <h6>735</h6>
-              <p>HAPPY CLIENTS</p>
+              <span class="number"><h6>735</h6></span>
+              <p>HAPPY CLIENTSSSS</p>
             </div>
           </div>
         </div>
@@ -151,54 +176,54 @@
     </div>
   </section>
   <section id="service">
-    <div class="product">
+    <div class="product wow lightSpeedIn" data-wow-duration="2s" data-wow-delay=".2s" >
       <div class="container-fluid">
         <div class="row">
-          <div class="col-md-3 col-xs-12 proimg">
-            <a href="#"><img src="images/pro1.jpg" class="img-fluid"></a>
+          <div class="col-md-3 col-6 proimg">
+            <a href="#"><img src="images/pro1.jpg" class="img-fluid "></a>
             <div class="overlay">
             </div>
           </div>
-          <div class="col-md-3 col-xs-12 proimg">
-            <a href="#"><img src="images/pro2.jpg" class="img-fluid"></a>
+          <div class="col-md-3 col-6 proimg ">
+            <a href="#"><img src="images/pro2.jpg" class="img-fluid "></a>
             <div class="overlay">
             </div>
           </div>
-          <div class="col-md-3 col-xs-12 proimg">
-            <a href="#"><img src="images/pro3.jpg" class="img-fluid"></a>
+          <div class="col-md-3 col-6 proimg">
+            <a href="#"><img src="images/pro3.jpg" class="img-fluid "></a>
             <div class="overlay">
             </div>
           </div>
-          <div class="col-md-3 col-xs-12 proimg">
-            <a href="#"><img src="images/pro4.jpg" class="img-fluid"></a>
+          <div class="col-md-3 col-6 proimg">
+            <a href="#"><img src="images/pro4.jpg" class="img-fluid "></a>
             <div class="overlay">
             </div>
           </div>
         </div>
         <div class="row">
-          <div class="col-md-3 col-xs-12 proimg">
-            <a href="#"><img src="images/pro5.jpg" class="img-fluid"></a>
+          <div class="col-md-3 col-6 proimg">
+            <a href="#"><img src="images/pro5.jpg" class="img-fluid "></a>
             <div class="overlay">
             </div>
           </div>
-          <div class="col-md-3 col-xs-12 proimg">
-            <a href="#"><img src="images/pro6.jpg" class="img-fluid"></a>
+          <div class="col-md-3 col-6 proimg">
+            <a href="#"><img src="images/pro6.jpg" class="img-fluid "></a>
             <div class="overlay">
             </div>
           </div>
-          <div class="col-md-3 col-xs-12 proimg">
-            <a href="#"><img src="images/pro7.jpg" class="img-fluid"></a>
+          <div class="col-md-3 col-6 proimg">
+            <a href="#"><img src="images/pro7.jpg" class="img-fluid "></a>
             <div class="overlay">
             </div>
           </div>
-          <div class="col-md-3 col-xs-12 proimg">
-            <a href="#"><img src="images/pro8.jpg" class="img-fluid"></a>
+          <div class="col-md-3 col-6 proimg">
+            <a href="#"><img src="images/pro8.jpg" class="img-fluid "></a>
             <div class="overlay">
             </div>
           </div>
         </div>
         <div class="row load justify-content-center">
-          <button type="button" class="block">Load more work</button>
+          <button type="button">Load more work</button>
         </div>
       </div>
     </div>
@@ -229,7 +254,7 @@
     <div class="skill container-fluid">
       <div class="container">
         <div class="row">
-          <div class="col-md-3 col-xs-12 skilltext">
+          <div class="col-md-3 col-xs-6 col-6 skilltext">
             <a href="#">
               <i class="pe-7s-diamond pe-2x pe-va"></i>
               <h6>ui / ux design</h6>
@@ -237,7 +262,7 @@
               make it wherein own</p>
             </a>
           </div>
-          <div class="col-md-3 col-xs-12 skilltext">
+          <div class="col-md-3 col-xs-6 col-6 skilltext">
             <a href="#">
               <i class="pe-7s-arc pe-2x pe-va"></i>
               <h6>web development</h6>
@@ -245,7 +270,7 @@
               third she'd kind fill</p>
             </a>
           </div>
-          <div class="col-md-3 col-xs-12 skilltext">
+          <div class="col-md-3 col-xs-6 col-6 skilltext">
             <a href="#">
               <i class="pe-7s-phone pe-2x pe-va"></i>
               <h6>app / mobile</h6>
@@ -253,7 +278,7 @@
               earth they're creeping</p>
             </a>
           </div>
-          <div class="col-md-3 col-xs-12 skilltext">
+          <div class="col-md-3 col-xs-6 col-6 skilltext">
             <a href="#">
               <i class="pe-7s-joy pe-2x pe-va"></i>
               <h6>game design</h6>
@@ -263,7 +288,7 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-md-3 col-xs-12 skilltext">
+          <div class="col-md-3 col-xs-6 col-6 skilltext">
             <a href="#">
               <i class="pe-7s-plane pe-2x pe-va"></i>
               <h6>SEO / marketing</h6>
@@ -271,7 +296,7 @@
               meat you, may</p>
             </a>
           </div>
-          <div class="col-md-3 col-xs-12 skilltext">
+          <div class="col-md-3 col-xs-6 col-6 skilltext">
             <a href="#">
               <i class="pe-7s-star pe-2x pe-va"></i>
               <h6>photography</h6>
@@ -279,7 +304,7 @@
               give moving saw give</p>
             </a>
           </div>
-          <div class="col-md-3 col-xs-12 skilltext">
+          <div class="col-md-3 col-xs-6 col-6 skilltext">
             <a href="#">
               <i class="pe-7s-magic-wand pe-2x pe-va"></i>
               <h6>graphic design</h6>
@@ -287,7 +312,7 @@
               fourth life whales</p>
             </a>
           </div>
-          <div class="col-md-3 col-xs-12 skilltext">
+          <div class="col-md-3 col-xs-6 col-6 skilltext">
             <a href="#">
               <i class="pe-7s-paint-bucket pe-2x pe-va"></i>
               <h6>illustrations</h6>
@@ -300,7 +325,7 @@
     </div>
   </section>
   <section id="contact">
-    <div class="slideshow-container">
+    <div class="slideshow-container wow lightSpeedIn" data-wow-duration="2s" data-wow-delay=".2s">
       <div class="mySlides">
         <h3>"Outstanding job and exceeded all expectations. It was a pleasure <br>
         to work with them on a sizable first project and am looking <br>
@@ -325,14 +350,14 @@
       <span class="dot" onclick="currentSlide(2)"></span> 
       <span class="dot" onclick="currentSlide(3)"></span> 
     </div>
-    <div class="logo">
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-2 col-md-2"><img src="images/logo1.png" class="img-fluid"></div>
-          <div class="col-xs-2 col-md-2 col-half-offset"><img src="images/logo2.png" class="img-fluid"></div>
-          <div class="col-xs-2 col-md-2 col-half-offset"><img src="images/logo3.png" class="img-fluid"></div>
-          <div class="col-xs-2 col-md-2 col-half-offset"><img src="images/logo4.png" class="img-fluid"></div>
-          <div class="col-xs-2 col-md-2 col-half-offset"><img src="images/logo5.png" class="img-fluid"></div>
+    <div  class="logo ">
+      <div id="logo" class="container animated">
+        <div class="row justify-content-center">
+          <div class="col"><img src="images/logo1.png" class="img-fluid animated"></div>
+          <div class="col"><img src="images/logo2.png" class="img-fluid animated"></div>
+          <div class="col"><img src="images/logo3.png" class="img-fluid animated"></div>
+          <div class="col"><img src="images/logo4.png" class="img-fluid animated"></div>
+          <div class=" col"><img src="images/logo5.png" class="img-fluid animated"></div>
         </div>
       </div>
     </div>
@@ -369,7 +394,7 @@
             </div>
           </div>  
               <div class="panel-footer">
-                  <input type="submit" value="Send Message"/>
+                  <button type="button" class="hvr-sweep-to-top">Send Message</button>
               </div>
         </form>
       </div>
@@ -378,31 +403,31 @@
   <div class="footer container-fluid">
     <div class="container">
       <div class="row">
-        <div class="col-lg-4 col-md-4 col-sm-4">
+        <div class="col-lg-3 col-md-6">
           <h5>Piroll Design, Inc.</h5>
           <p>© 2017 Piroll. All rights reserved.<br>
           Designed by robirurk.</p>
         </div>
-        <div class="col-lg-3 col-md-3 col-sm-3">
+        <div class="col-lg-3 col-md-6">
           <p>hello@pirolltheme.com<br>
           +44 987 065 908 </p>
         </div>
-        <div class="col-lg-3 col-md-3 col-sm-3">
-          <ul class="ul1">
+        <div class="col-lg-3 col-md-6">
+          <ul class="ul1 col-xs-6">
             <a href="#"><li>Projects</li></a>
             <a href="#"><li>About</li></a>
             <a href="#"><li>Services</li></a>
             <a href="#"><li>Carreer</li></a>
           </ul>
-          <ul class="ul2">
+          <ul class="ul2 col-xs-6">
             <a href="#"><li>News</li></a>
             <a href="#"><li>Events</li></a>
             <a href="#"><li>Contact</li></a>
             <a href="#"><li>Legals</li></a>
           </ul>
         </div>
-        <div class="col-lg-2 col-md-2 col-sm-2">
-          <ul class="ul2">
+        <div class="col-lg-3 col-md-6">
+          <ul class="ul2" style="text-align: center;">
             <a href="#"><li>Facebook</li></a>
             <a href="#"><li>Twitter</li></a>
             <a href="#"><li>Instagram</li></a>
@@ -414,4 +439,21 @@
   </div>
 </body>
 <script type="text/javascript" src="js/piroll.js"></script>
+<script src="js/preloader.js"></script>
+<script src="js/parallax-js-master/parallax.js"></script>
+<script src="js/progressbar/progressbar.min.js"></script>
+<script src="js/jquery.counterup.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+<script>
+new WOW().init();
+</script>
+<script type="text/javascript">
+  $('.parallax-window').parallax({imageSrc: 'images/skill.jpg'});
+</script>
+<script type="text/javascript">
+  $('#logo').hover(
+       function(){ $(this).addClass('swing') },
+       function(){ $(this).removeClass('swing') }
+)
+</script>
 </html>

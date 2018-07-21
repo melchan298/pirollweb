@@ -15,6 +15,44 @@ $cldark:#555555;
     -moz-transition: all .35s;
 	transition: all 0.3s;
 }
+@mixin fontmon(){
+	font-family: Montserrat,Medium;
+	font-weight: bold;
+}
+body {
+  overflow: hidden;
+}
+
+
+/* Preloader */
+
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  /* change if the mask should have another color then white */
+  z-index: 99;
+  /* makes sure it stays on top */
+}
+
+#status {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  left: 50%;
+  /* centers the loading animation horizontally one the screen */
+  top: 50%;
+  /* centers the loading animation vertically one the screen */
+  background-image: url(https://raw.githubusercontent.com/niklausgerber/PreLoadMe/master/img/status.gif);
+  /* path to your loading animation */
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: -100px 0 0 -100px;
+  /* is width and height divided by two */
+}
 #mainNav {
     border-color: fade-out($clnor, 0.95);
     background-color: white;
@@ -34,10 +72,8 @@ $cldark:#555555;
     .navbar-nav {
         > li {
             > a {
-                font-size: 11px;
-                font-family: Montserrat,Medium;
+            	@include fontmon;
 				text-transform: uppercase;
-				font-weight: bold;
 				font-size: 13px;
 
                 &.active {
@@ -94,14 +130,19 @@ $cldark:#555555;
         }
     }
 }
+#header {
+	height: 100vh;
+}
 .intro {
 	display: table;
 	width: 100%;
+	height: 100vh;
 	padding: 0;
 	background: url(../images/banner.jpg) no-repeat center center;
 	background-color: #e5e5e5;
 	background-size: cover;
 	font-family:Montserrat;
+	position: relative;
 	.overlay {
 	background: rgba(255,255,255,0.2);
 	}
@@ -120,10 +161,11 @@ $cldark:#555555;
 	margin-bottom: 40px;
 	line-height: 1.7;
 	}
+
 	.intro-text {
-	padding-top: 300px;
-	padding-bottom: 200px;
-	padding-left: 600px;
+		top: 37%;
+		right: 20%;
+		position: absolute;
 	}
 }
 @media screen and (max-width: 800px) {
@@ -165,52 +207,60 @@ $cldark:#555555;
 		}
 	}
 }
-.proskill {
-	background: url("../images/skill.jpg");
-	background-size: cover;
-	background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-	margin: 0;
 
-	.protext {
-		padding-bottom: 40px;
-		padding-top: 40px;
-		.progress {
-			height: 4px;
-		}
-		h3 {
-			font-family: Montserrat,Medium;
-			font-weight: bold;
-		}
-		p{
-			text-transform: uppercase;
-			font-size: 12px;
-			font-weight: bold;
-			font-family: Montserrat,Medium;
-			padding-top: 20px;
+.departments
+{
+	position: relative;
+	width: 100%;
+	background: transparent;
+	padding-top: 75px;
+	padding-bottom: 65px;
+	.departments_background
+	{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	}
+	.dept_col
+	{
+	margin-bottom: 30px;
+		.dept
+		{
+			.protext {
+				@include fontmon;
+				padding-bottom: 40px;
+				padding-top: 40px;
+				.progress {
+					height: 4px;
+				}
+				p{
+					text-transform: uppercase;
+					font-size: 12px;
+					padding-top: 20px;
+				}
+			}
 		}
 	}
-
 }
+
+
+
 .total {
 	background-color: #10c9c3;
 	.row {
 		padding-top: 60px;
 		padding-bottom: 60px;
-		color: white;
+		color: $cltrang;
 		.totaltext {
 			display: inline-block;
-			
+			@include fontmon;
 			h6 {
-				font-weight: bold;
-				font-family: Montserrat,Medium;
 				margin: 0;
 			}
 			p {
 				font-size: 12px;
-				font-weight: bold;
-				font-family: Montserrat,Medium;
 				text-transform: uppercase;
 			}
 		}
@@ -242,36 +292,39 @@ $cldark:#555555;
 		  }
 		}
 		.overlay2 {
-		  position: absolute;
-		  top: 0;
-		  bottom: 0;
-		  left: 0;
-		  right: 0;
-		  height: 100%;
-		  width: 100%;
-		  opacity: 0;
-		  transition: .3s ease;
+		  @extend .overlay;
 		  background-color: $clactive;
-		  &:hover {
-		  	opacity: 0.4;
-		  }
 		}
 	}
 	.load
 	{
+		@include fontmon;
 		button {
-				display: block;
-			    width: 100%;
-			    border: none;
-			    cursor: pointer;
-			    text-align: center;
-				color: $clp;
-				background-color: $lightdark;
-				padding: 20px 0 15px 0;
-				font-size: 12px;
-				font-weight: bold;
-				font-family: Montserrat,Medium;
-				text-transform: uppercase;		    
+			font-size: 12px;
+			text-transform: uppercase;	
+			border: none;
+			background: $lightdark;
+			color: $clp;
+			padding: 10px;
+			border-radius: 5px;
+			position: relative;
+			width: 100%;
+			box-sizing: border-box;
+			transition: all 500ms ease;
+			&:before {
+				content:'';
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				width: 0px;
+				height: 42px;
+				background: rgba(274, 209, 204,0.4);
+				color:$cltrang;
+				transition: all 2s ease;
+			}
+			&:hover:before {
+				width: 100%;
+			}
 		}
 	}
 }
@@ -296,6 +349,7 @@ $cldark:#555555;
 	padding: 40px 0 40px 0;
 	.skilltext {
 		text-align: center;
+		@include fontmon;
 		a { 
 			text-decoration: none;
 			.pe-va{ 
@@ -311,12 +365,9 @@ $cldark:#555555;
 		i {
 			padding-bottom: 10px;
 			color: black;
-
 		}
 		h6 {
 			color: black;
-			font-weight: bold;
-			font-family: Montserrat,Medium;
 			margin: 0;
 			font-size: 9pt;
 			text-transform: uppercase;
@@ -324,9 +375,6 @@ $cldark:#555555;
 		}
 		p {
 			font-size: 12px;
-			font-weight: bold;
-			font-family: Montserrat,Medium;
-
 			color: $clp;
 		}
 
@@ -340,18 +388,14 @@ $cldark:#555555;
 		padding: 100px;
 		padding-top: 120px;
 		text-align: center;
+		@include fontmon;
+		color: $cltrang;
 		h3 {
-			font-family: Montserrat,Medium;
 			font-size: 20pt;
-			color: white;
-			font-weight: bold;
 		}
 		.author {
-			font-weight: bold;
-			font-family: Montserrat,Medium;
 			font-size: 9pt;
 			text-transform: uppercase;
-			color: white;
 			padding-top: 10px;
 		}
 	}
@@ -366,7 +410,7 @@ $cldark:#555555;
 		height: 15px;
 		width: 15px;
 		margin: 0 2px;
-		background-color: white;
+		background-color: $cltrang;
 		border-radius: 50%;
 		display: inline-block;
 		transition: background-color 0.6s ease;
@@ -385,8 +429,8 @@ $cldark:#555555;
 	padding: 0;
 	.formtext {
 		padding: 60px;
-		background-color: $lightdark;
 		text-align: center;
+		background-color: #e9ecef;
 		form {
 
 			margin-left:auto;
@@ -397,12 +441,11 @@ $cldark:#555555;
  			}
  			.panel-footer {
  				padding-top: 10px;
- 				input[type=submit] {
- 				background-color: $clxanh;
+ 				button {
+ 				background-color: black;
  				color: $cltrang;
  				border: none;
- 				font-weight: bold;
-				font-family: Montserrat,Medium;
+ 				@include fontmon;
 				font-size: 9pt;
 				padding: 15px 20px 15px 20px;
 					&:hover,&:focus
@@ -431,17 +474,21 @@ $cldark:#555555;
 	padding: 50px 0 50px 0;
 }
 .amelia {
-	background: url("../images/aboutban.jpg");
-	background-size: cover;
-	background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
+	position: relative;
+
 	margin: 0;
 	text-align: center;
+	.amelia_background {
+		position: absolute;
+		top: 0;
+	    left: 0;
+	    width: 100%;
+	    height: 100%;
+	}
 	.ameliatext {
 		padding-bottom: 80px;
 		padding-top: 80px;
-		color: white;
+		color: $cltrang;
 		h3 {
 			font-family: Montserrat,Medium;
 		}
@@ -451,14 +498,77 @@ $cldark:#555555;
 	}
 
 }
+.aboutme{
+	padding: 0;
+	margin: 0;
+	.aboutimg {
+	background: url("../images/aboutme.jpg");
+	background-size: cover;
+    background-repeat: no-repeat;
+	margin: 0;
+	}
+	.abouttext {
+		padding: 100px 0 100px 40px;
+	}
+}
+.project {
+	text-align: center;
+	padding: 80px 0 80px 0;
+	h3 {
+		@include fontmon;
+	}
+	p{
+		font-family: Nunito Sans;
+		color: $cldark;
+		font-size: 10pt;
+	}
+}
+.foodlist{
+	padding: 0;
+	margin: 0;
+	.foodtext {
+		padding: 80px 0 80px 80px;
+		h3 {
+		@include fontmon;
+		padding-bottom: 20px;
+		}
+		p{
+		font-family: Nunito Sans;
+		color: $cldark;
+		font-size: 10pt;
+		}
+	}
+}
+.contact {
+	margin: 0;
+	padding: 0;
+	.contacttext {
+		padding-top: 53px;
+		h3 {
+			@include fontmon;
+			padding-bottom: 20px;
+		}
+		p{
+		font-family: Nunito Sans;
+		color: $cldark;
+		font-size: 10pt;
+		}
+	}
+}
+#map-canvas {
+    height: 500px;
+   	width: 100%;
+    margin: 0px;
+    padding: 0;
+}
 .footer {
 	padding: 50px;
 	background-color: $clnor;
 	p {
-		color: #cldark;
+		color: $cldark;
 	}
 	h5 {
-		color: white;
+		color: $cltrang;
 		padding-bottom: 10px;
 	}
 	ul {
