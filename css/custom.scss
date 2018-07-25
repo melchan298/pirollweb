@@ -130,6 +130,9 @@ body {
         }
     }
 }
+.active {
+	color: $clactive;
+}
 #header {
 	height: 100vh;
 }
