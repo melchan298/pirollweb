@@ -389,7 +389,6 @@ body {
 	.mySlides {
 		display: none;
 		padding: 100px;
-		padding-top: 120px;
 		text-align: center;
 		@include fontmon;
 		color: $cltrang;
@@ -400,6 +399,7 @@ body {
 			font-size: 9pt;
 			text-transform: uppercase;
 			padding-top: 10px;
+			margin: 0;
 		}
 	}
 }
@@ -428,6 +428,13 @@ body {
     margin-left:4.166666667%
 	}
 }
+.slider{
+	padding-top: 30px;
+	padding-bottom: 30px;
+	img {
+		margin: 0 auto;
+	}
+}
 .formproject {
 	padding: 0;
 	.formtext {
@@ -438,6 +445,7 @@ body {
 
 			margin-left:auto;
  			margin-right:auto;
+
  			::placeholder {
  				font-family: Nunito Sans;
 				font-size: 10pt;
@@ -468,6 +476,13 @@ body {
 			font-family: Nunito Sans;
 			font-size: 10pt;
 		}
+	}
+}
+@media (max-width: 600px) {
+	.modal-body{
+		.email {
+				padding-top: 20px;
+			}
 	}
 }
 .uiux {
@@ -524,6 +539,7 @@ body {
 		font-size: 10pt;
 	}
 }
+
 .foodlist{
 	padding: 0;
 	margin: 0;
@@ -584,10 +600,21 @@ body {
 	}
 	.ul1{
 			float: left;
+			padding: 0;
 		}
 		.ul2 {
 			float: right;
 		}
+
+}
+@media (max-width: 500px) {
+	.footer
+	{
+			.ul3 {
+				float: left;
+				padding: 0;
+			}
+	}
 }
 .scrollToTop{
     width:50px; 

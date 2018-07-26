@@ -22,6 +22,8 @@
   <link rel="stylesheet" href="css/animate.css">
   <link rel="stylesheet" href="css/animations.css">
   <link rel="stylesheet" href="css/hover-min.css">
+  <link rel="stylesheet" type="text/css" href="css/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="css/slick-theme.css"/>
   <link rel=”stylesheet” href=”https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css”>
 	<title></title>
 </head>
@@ -67,22 +69,20 @@
 	  <div class="intro">
 	    <div class="overlay">
 	      <div class="container">
-	        <div class="row">
 	          <div class="intro-text">
 	            <h1>We Design And Develop</h1>
 	            <p>We are a new design studio based in USA. We have over <br>
                 20 years of combined experience, and know a thing or two <br>
                 about designing websites and mobile apps.</p>
-	            <a href="#about" class="btn btn-custom btn-lg page-scroll">Contact us</a> </div>
-	        </div>
+	            <a href="#about" class="btn btn-custom btn-lg page-scroll">Contact us</a> 
+            </div>
 	      </div>
 	    </div>
 	  </div>
 	</header>
   <section id="about">
     <div class="aboutus">
-      <div class="container-fluid">
-        <div class="row justify-content-center">
+      <div class="container-fluid justify-content-center">
           <div class="abouttext">
             <h3>About Us</h3>
             <p>
@@ -92,7 +92,6 @@
             </p>
             <img src="images/signature.png" class="img-fluid">
           </div>
-        </div>
       </div>
     </div>
   </section>
@@ -350,17 +349,27 @@
       <span class="dot" onclick="currentSlide(2)"></span> 
       <span class="dot" onclick="currentSlide(3)"></span> 
     </div>
-    <div  class="logo ">
-      <div id="logo" class="container">
-        <div class="row justify-content-center">
-          <div class="col"><img src="images/logo1.png" class="img-fluid"></div>
-          <div class="col"><img src="images/logo2.png" class="img-fluid"></div>
-          <div class="col"><img src="images/logo3.png" class="img-fluid"></div>
-          <div class="col"><img src="images/logo4.png" class="img-fluid"></div>
-          <div class=" col"><img src="images/logo5.png" class="img-fluid"></div>
+      </section>
+    <div class="container">
+      <div class="slider responsive">
+        <div>
+          <img src="images/logo1.png" class="img-fluid">
+        </div>
+        <div>
+          <img src="images/logo2.png" class="img-fluid">
+        </div>
+        <div>
+          <img src="images/logo3.png" class="img-fluid">
+        </div>
+        <div>
+          <img src="images/logo4.png" class="img-fluid">
+        </div>
+        <div>
+          <img src="images/logo5.png" class="img-fluid">
         </div>
       </div>
     </div>
+    
     <div class="formproject container-fluid">
       <div class="formtext">
         <h3>Need a Project?</h3>
@@ -399,7 +408,7 @@
         </form>
       </div>
     </div>
-  </section>
+
   <div class="footer container-fluid">
     <div class="container">
       <div class="row">
@@ -427,7 +436,7 @@
           </ul>
         </div>
         <div class="col-lg-3 col-md-6">
-          <ul class="ul2" style="text-align: center;">
+          <ul class="ul3">
             <a href="#"><li>Facebook</li></a>
             <a href="#"><li>Twitter</li></a>
             <a href="#"><li>Instagram</li></a>
@@ -460,4 +469,43 @@ new WOW().init();
   event.preventDefault();
 });
 </script> -->
+<script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="js/slick.min.js"></script>
+<script type="text/javascript">
+  $('.responsive').slick({
+  dots: false,
+  infinite: false,
+  autoplay: false,
+  speed: 2000,
+  arrows: false,
+  slidesToShow: 5,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        autoplay: true,
+        slidesToShow: 3,
+        slidesToScroll: 1
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    }
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+  ]
+});
+</script>
 </html>
